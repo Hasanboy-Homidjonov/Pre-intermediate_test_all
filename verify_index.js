@@ -45,11 +45,11 @@ console.log('Total Units in index.html:', uCount);
 
 for (let id = 1; id <= 20; id++) {
   const count = vm.runInContext(`UNITS_DATA.find(u => u.id === ${id}).questions.length`, context);
-  if (count < 50) {
+  if (count < 100) {
     console.error(`ERROR: Unit ${id} has only ${count} questions!`);
   }
 }
-console.log('All 20 units verified to have 50 questions!');
+console.log('All 20 units verified to have 100 questions!');
 
 const p10 = vm.runInContext(`prepareQuestions(1, '10').length`, context);
 const p15 = vm.runInContext(`prepareQuestions(1, '15').length`, context);
@@ -66,8 +66,8 @@ console.log(`prepareQuestions count:
   30 -> ${p30}
   all -> ${pAll}`);
 
-if (pAll === 50) {
-  console.log('SUCCESS: When "all" is selected, it returns ALL 50 questions!');
+if (pAll === 100) {
+  console.log('SUCCESS: When "all" is selected, it returns ALL 100 questions!');
 } else {
-  console.error('FAILURE: "all" did not return 50 questions!');
+  console.error('FAILURE: "all" did not return 100 questions!');
 }

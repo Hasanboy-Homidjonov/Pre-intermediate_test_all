@@ -1,4 +1,4 @@
-// build_final_index.js - Compiles index.html with all 20 units (1,000 questions)
+// build_final_index.js - Compiles index.html with all 20 units (2,000 questions)
 
 const fs = require('fs');
 
@@ -55,7 +55,7 @@ const newSelectTopic = `function selectTopic(unitId) {
       const u = unit || UNITS_DATA.find(x => x.id === state.selectedUnitId) || UNITS_DATA[0];
       const opt = document.querySelector('#countSelect option[value=\"all\"]');
       if (opt) {
-        const count = u.questions ? u.questions.length : 50;
+        const count = u.questions ? u.questions.length : 100;
         if (state.lang === 'ru') {
           opt.textContent = 'Все вопросы (' + count + ')';
         } else if (state.lang === 'en') {
